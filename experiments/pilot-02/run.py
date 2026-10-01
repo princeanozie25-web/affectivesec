@@ -46,9 +46,7 @@ def main():
         cal["doses"][str(k)] = row
         print(json.dumps({"k": k, **row, "baseline": base}), flush=True)
         if all(base - row[name] <= 0.05 for name in row):
-            k_star = k
-        else:
-            break                       # coherence only falls as the dose rises; stop at the first failure
+            k_star = k                  # the largest qualifying dose, as registered (every dose is tried)
     cal["k_star"] = k_star
     (RAW / "calibration.json").write_text(json.dumps(cal, indent=1))
     if k_star is None:
