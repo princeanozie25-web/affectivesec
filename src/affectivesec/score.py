@@ -73,3 +73,26 @@ def coherent(code: str) -> bool:
         if grams[g] > 5:
             return False
     return True
+
+
+def semgrep_flags(codes: dict, semgrep: str, rules: str) -> dict:
+    """{key: [findings]} from Semgrep with a pinned local ruleset (offline: no registry, no metrics)."""
+    out = {k: [] for k in codes}
+    with tempfile.TemporaryDirectory() as d:
+        paths = {}
+        for i, (k, code) in enumerate(codes.items()):
+            p = Path(d) / f"s{i:05d}.py"
+            p.write_text(code)
+            paths[str(p)] = k
+        r = subprocess.run([semgrep, "scan", "--config", rules, "--json", "--metrics", "off",
+                            "--disable-version-check", "--quiet", d], capture_output=True, text=True)
+        report = json.loads(r.stdout or "{}")
+        for f in report.get("results", []):
+            key = paths.get(f["path"]) or paths.get(str(Path(f["path"]).resolve()))
+            if key is not None:
+                out[key].append({"rule": f["check_id"], "severity": f["extra"].get("severity", "")})
+    return out
+
+
+def semgrep_flagged(findings: list) -> bool:
+    return any(f["severity"] in ("WARNING", "ERROR") for f in findings)

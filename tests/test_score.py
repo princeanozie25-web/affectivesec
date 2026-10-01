@@ -37,5 +37,16 @@ class TestScore(unittest.TestCase):
         self.assertEqual(out["good"], [])
 
 
+class TestSemgrep(unittest.TestCase):
+    def test_semgrep_flags_a_known_bad_snippet_and_passes_a_good_one(self):
+        root = Path(__file__).resolve().parents[1]
+        out = score.semgrep_flags({"bad": "import subprocess\ndef run(cmd):\n    subprocess.call(cmd, shell=True)\n",
+                                   "good": "def add(a, b):\n    return a + b\n"},
+                                  str(root / ".venv" / "bin" / "semgrep"),
+                                  str(root / "experiments" / "study-01" / "semgrep-p-python.yml"))
+        self.assertTrue(score.semgrep_flagged(out["bad"]))
+        self.assertEqual(out["good"], [])
+
+
 if __name__ == "__main__":
     unittest.main()
