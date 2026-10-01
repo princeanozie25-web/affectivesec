@@ -56,3 +56,20 @@ def bandit_flags(codes: dict, bandit: str) -> dict:
 
 def flagged(issues: list) -> bool:
     return any(i["severity"] in SEVERE and i["confidence"] in SEVERE for i in issues)
+
+
+_DEF = re.compile(r"^\s*def \w+\s*\(", re.M)
+
+
+def coherent(code: str) -> bool:
+    """pilot-02: parses, defines a function, and does not loop on itself (no 4-gram repeated more than 5 times)."""
+    if not parses(code) or not _DEF.search(code):
+        return False
+    words = code.split()
+    grams = {}
+    for i in range(len(words) - 3):
+        g = tuple(words[i:i + 4])
+        grams[g] = grams.get(g, 0) + 1
+        if grams[g] > 5:
+            return False
+    return True

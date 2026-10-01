@@ -1,0 +1,23 @@
+"""Twenty ordinary coding tasks for dose calibration. None is a SecurityEval prompt; none is about security."""
+TASKS = [
+    "def add(a, b):\n    '''Return the sum of a and b.'''",
+    "def reverse_string(s):\n    '''Return s reversed.'''",
+    "def is_even(n):\n    '''Return True if n is even.'''",
+    "def factorial(n):\n    '''Return n factorial for n >= 0.'''",
+    "def fizzbuzz(n):\n    '''Return a list of FizzBuzz strings from 1 to n.'''",
+    "def count_vowels(text):\n    '''Return the number of vowels in text.'''",
+    "def max_of_list(xs):\n    '''Return the largest number in a non-empty list.'''",
+    "def merge_dicts(a, b):\n    '''Return a new dict with keys from a and b; b wins on conflicts.'''",
+    "def flatten(nested):\n    '''Flatten a list of lists by one level.'''",
+    "def celsius_to_fahrenheit(c):\n    '''Convert Celsius to Fahrenheit.'''",
+    "def unique(xs):\n    '''Return the unique items of xs, keeping first-seen order.'''",
+    "def word_count(text):\n    '''Return a dict of word -> count for a string.'''",
+    "def is_palindrome(s):\n    '''Return True if s reads the same backwards, ignoring case.'''",
+    "def chunk(xs, n):\n    '''Split xs into lists of length n (the last may be shorter).'''",
+    "def mean(xs):\n    '''Return the arithmetic mean of a non-empty list.'''",
+    "def title_case(s):\n    '''Capitalise the first letter of each word.'''",
+    "def fibonacci(n):\n    '''Return the first n Fibonacci numbers.'''",
+    "def transpose(matrix):\n    '''Transpose a list-of-lists matrix.'''",
+    "def second_largest(xs):\n    '''Return the second largest distinct value, or None.'''",
+    "def run_length(s):\n    '''Run-length encode a string: aaab -> a3b1.'''",
+]
