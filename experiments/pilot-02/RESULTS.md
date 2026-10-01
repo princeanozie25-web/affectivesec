@@ -30,7 +30,7 @@ bug produced are reported as extra and are not part of any registered test.
 
 Registered contrasts (Benjamini-Hochberg over six): desperate 0.04 and 0.02 flag exactly the same prompts as
 baseline (zero discordant pairs); calm shows no significant change; **random at 0.04 flags 11.6 points fewer**
-(15 prompts flagged only at baseline, 1 only when steered; adjusted p = 0.006).
+(15 prompts flagged only at baseline, 1 only when steered; adjusted p = 0.003).
 
 ## Verdict: H1 not supported
 
