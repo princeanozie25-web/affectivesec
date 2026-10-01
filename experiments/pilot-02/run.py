@@ -45,7 +45,7 @@ def main():
         row = {name: coherence(model, tok, k * N * v) for name, v in dirs.items()}
         cal["doses"][str(k)] = row
         print(json.dumps({"k": k, **row, "baseline": base}), flush=True)
-        if all(base - row[name] <= 0.05 for name in row):
+        if all(round(base - row[name], 9) <= 0.05 for name in row):   # 5 points exactly is within (float fix)
             k_star = k                  # the largest qualifying dose, as registered (every dose is tried)
     cal["k_star"] = k_star
     (RAW / "calibration.json").write_text(json.dumps(cal, indent=1))
@@ -68,3 +68,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def extend(k: float) -> None:
+    """Deviation fix (2026-10-01): generate the conditions at dose k that the float bug skipped."""
+    model, tok = sm.load(REPO)
+    dirs, N = directions(model, tok)
+    from datasets import load_dataset
+    tasks = load_dataset("s2e-lab/SecurityEval", split="train")
+    with (RAW / "samples.jsonl").open("a") as f:
+        for name in ("desperate", "calm", "random"):
+            t0 = time.time()
+            for row in tasks:
+                reply = sm.generate(model, tok, row["Prompt"], vector=k * N * dirs[name], layer=LAYER)
+                f.write(json.dumps({"condition": name, "k": k, "id": row["ID"], "reply": reply}) + "\n")
+                f.flush()
+            print(f"{name} k={k}: {time.time() - t0:.0f}s", flush=True)
