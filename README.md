@@ -13,8 +13,13 @@ It runs on one MacBook (M1 Max, 32 GB) at no cost.
 
 ## Status
 
-This is a plan. No experiments have run yet. The full plan and its review are in [`docs/PLAN.md`](docs/PLAN.md).
-The references are in [`docs/REFERENCES.md`](docs/REFERENCES.md).
+The full study (study-01) is complete. **H1 is not supported** on Qwen2.5-Coder 0.5B, 1.5B, 3B or 7B.
+The one significant change (3B) shows fewer static-analysis flags, and it comes from broken, shorter code.
+Read [`experiments/study-01/RESULTS.md`](experiments/study-01/RESULTS.md).
+
+- Pre-registration: [`prereg/study-01.md`](prereg/study-01.md), commit c32c9a2.
+- Pilots: [`experiments/pilot-01`](experiments/pilot-01) and [`experiments/pilot-02`](experiments/pilot-02).
+- The plan and its review: [`docs/PLAN.md`](docs/PLAN.md). References: [`docs/REFERENCES.md`](docs/REFERENCES.md).
 
 ## Method, in short
 
