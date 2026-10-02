@@ -1,0 +1,44 @@
+{"model": "0.5B", "layer": 17, "k": 0.01, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "0.5B", "layer": 17, "k": 0.02, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "0.5B", "layer": 17, "k": 0.04, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "0.5B", "layer": 17, "k": 0.06, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "0.5B", "layer": 17, "k": 0.08, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "0.5B", "layer": 17, "k_star": 0.08}
+0.5B baseline: 845 samples in 604s
+0.5B desperate: 845 samples in 571s
+0.5B calm: 845 samples in 650s
+0.5B random: 845 samples in 651s
+0.5B: scored 3380 samples
+{"model": "1.5B", "layer": 20, "k": 0.01, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "1.5B", "layer": 20, "k": 0.02, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "1.5B", "layer": 20, "k": 0.04, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "1.5B", "layer": 20, "k": 0.06, "desperate": 0.95, "calm": 1.0, "random": 0.9, "baseline": 1.0}
+{"model": "1.5B", "layer": 20, "k": 0.08, "desperate": 0.65, "calm": 1.0, "random": 0.2, "baseline": 1.0}
+{"model": "1.5B", "layer": 20, "k_star": 0.04}
+1.5B baseline: 845 samples in 1269s
+1.5B desperate: 845 samples in 1266s
+1.5B calm: 845 samples in 1289s
+1.5B random: 845 samples in 1399s
+1.5B: scored 3380 samples
+{"model": "3B", "layer": 22, "k": 0.01, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "3B", "layer": 22, "k": 0.02, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "3B", "layer": 22, "k": 0.04, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "3B", "layer": 22, "k": 0.06, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "3B", "layer": 22, "k": 0.08, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "3B", "layer": 22, "k_star": 0.08}
+3B baseline: 845 samples in 2880s
+3B desperate: 845 samples in 2377s
+3B calm: 845 samples in 2928s
+3B random: 845 samples in 2913s
+3B: scored 3380 samples
+{"model": "7B", "layer": 20, "k": 0.01, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "7B", "layer": 20, "k": 0.02, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "7B", "layer": 20, "k": 0.04, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "7B", "layer": 20, "k": 0.06, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "7B", "layer": 20, "k": 0.08, "desperate": 1.0, "calm": 1.0, "random": 1.0, "baseline": 1.0}
+{"model": "7B", "layer": 20, "k_star": 0.08}
+7B baseline: 845 samples in 5466s
+7B desperate: 845 samples in 5401s
+7B calm: 845 samples in 5103s
+7B random: 845 samples in 5277s
+7B: scored 3380 samples
